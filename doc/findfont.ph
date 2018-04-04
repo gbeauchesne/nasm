@@ -138,7 +138,7 @@ sub findfont($) {
         chomp($file = <$fh>);
         chomp($psname = <$fh>);
         close($fh);
-        if ( -f $file ) {
+        if ( -f $file && $psname ) {
             if ($psname eq $fontname) {
                 add_file_to_font_hash($file);
             }
